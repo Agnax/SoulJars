@@ -45,9 +45,9 @@ public class SoulJars extends JavaPlugin implements Listener {
 		required_souls = cfg.getInt("required-souls");
 
 		try {
-			category = new Category(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jars", "", "&a> Click to open"));
-			recipeType = new RecipeType(new CustomItem(Material.PLAYER_HEAD, "&cKill the specified Mob", "&cwhile having an empty Soul Jar", "&cin your Inventory"));
-			jar = new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jar &7(Empty)", "", "&rKill a Mob while having this", "&rItem in your Inventory to bind", "&rit's Soul to this Jar");
+			category = new Category(new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jars", "", "&a> Click para abrir"));
+			recipeType = new RecipeType(new CustomItem(Material.PLAYER_HEAD, "&rAl tener este objeto en tu", "&rinventario, el alma del", "&rse guardará en el jarrón."));
+			jar = new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jar &7(Vacío)", "", "&rAl tener este objeto en tu", "&rinventario, el alma del", "&rse guardará en el jarrón.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,15 +75,15 @@ public class SoulJars extends JavaPlugin implements Listener {
 		Material m = Material.getMaterial(type.toString() + "_SPAWN_EGG");
 		if (m == null) m = Material.ZOMBIE_SPAWN_EGG;
 		
-		new SlimefunItem(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jar &7(" + StringUtils.format(mob) + ")", "", "&7Infused Souls: &e0"), mob + "_SOUL_JAR", recipeType,
+		new SlimefunItem(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&bSoul Jar &7(" + StringUtils.format(mob) + ")", "", "&7Almas infundidas: &e0"), mob + "_SOUL_JAR", recipeType,
 		new ItemStack[] {null, null, null, jar, null, new CustomItem(m, "&rKill 1x " + StringUtils.format(mob)), null, null, null})
 		.register();
 
-		new SlimefunItem(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&cSoul Jar &7(" + StringUtils.format(mob) + ")", "", "&7Infused Souls: &e" + required_souls), mob + "_SOUL_JAR_2", recipeType,
+		new SlimefunItem(category, new CustomItem(CustomSkull.getItem("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQxYzc3N2VlMTY2YzQ3Y2FlNjk4YWU2Yjc2OWRhNGUyYjY3ZjQ2ODg1NTMzMGFkN2JkZGQ3NTFjNTI5M2YifX19"), "&cSoul Jar &7(" + StringUtils.format(mob) + ")", "", "&7Almas infundidas: &e" + required_souls), mob + "_SOUL_JAR_2", recipeType,
 		new ItemStack[] {null, null, null, jar, null, new CustomItem(m, "&rKill " + required_souls + "x " + StringUtils.format(mob)), null, null, null})
 		.register();
 
-		new SlimefunItem(category, new CustomItem(Material.SPAWNER, "&cBroken Spawner", "&7Type: &b" + StringUtils.format(mob), "", "&cFractured, must be repaired in an Ancient Altar"), mob + "_BROKEN_SPAWNER", RecipeType.ANCIENT_ALTAR,
+		new SlimefunItem(category, new CustomItem(Material.SPAWNER, "&cSpawner roto", "&7Tipo: &b" + StringUtils.format(mob), "", "&cFracturado, debe ser reparado en un Altar Antiguo"), mob + "_BROKEN_SPAWNER", RecipeType.ANCIENT_ALTAR,
 		new ItemStack[] {new ItemStack(Material.IRON_BARS), SlimefunItems.RUNE_EARTH, new ItemStack(Material.IRON_BARS), SlimefunItems.RUNE_EARTH, SlimefunItem.getItem(mob + "_SOUL_JAR_2"), SlimefunItems.RUNE_EARTH, new ItemStack(Material.IRON_BARS), SlimefunItems.RUNE_EARTH, new ItemStack(Material.IRON_BARS)})
 		.register();
 	}
